@@ -1,115 +1,71 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>String, Math and Date Functions in PHP</title>
+</head>
 <body>
-<h1><center>STRING,MATH AND DATE
-METHODS</center></h1>
-<form action ="ex2b.php" method ="get"> 1.STRING FUNCTIONS<BR>
-2.	DATE FUNCTIONS<BR>
-3.	MATH FUNCTIONS<BR>
-ENTER YOUR CHOICE<input type="text"
-name="CHOICE"/><BR>
-<input type="submit" name="visit"/><br>
+<h1><center>STRING, MATH AND DATE FUNCTIONS</center></h1>
+
+<form method="get">
+    <b>Select an option:</b><br>
+    1. String Functions <br>
+    2. Date Functions <br>
+    3. Math Functions <br><br>
+    Enter your choice: <input type="text" name="choice" required>
+    <input type="submit" value="Submit">
+</form>
+<hr>
+
 <?php
-$n=$_GET["CHOICE"];
-switch($n)
-{
-case 1:
-echo "<b>STRING FUNCTIONS</b>";
-echo "<br>";
-$string=" basic functiOn "; echo strtoupper($string);
-echo "<br>";
-echo ucfirst($string); echo "<br>";
-echo strrev($string); echo "<br>";
-echo rtrim($string); echo "<br>";
-echo ltrim($string); echo "<br>";
-echo strtolower($string); echo "<br>";
-echo str_repeat($string,3); echo "<br>";
-echo
-str_replace("Basic","Elementary","Basic functions");
-echo "<br>"; break;
-case 2:
-echo "DATE FUNCTION";
-echo "<br>";
-date_default_timezone_set("Asiz/kolkata");
-echo date("d"); echo "<br>";
-echo date("m"); echo "<br>";
-echo date("y"); echo "<br>"; break;
-case 3:
-echo "Mark alloted";
-$m1=95.5;
-$m2=96.3;
-$m3=90.65;
-$m4=91.56;
-$m5=85.6;
-$p=-95.4;
-echo floor($m1); echo "<br>";
-echo floor($m2);
-echo "<br>";
-echo floor($m3); echo "<br>";
-echo floor($m4); echo "<br>";
-echo floor($m5);
-echo "<br>"; echo abs($p); echo "<br>"; break;
-default:
-echo "Enter the correct choice";
+if (isset($_GET['choice'])) {
+    $n = $_GET['choice'];
 
+    switch ($n) {
+        case 1:
+            echo "<h2>STRING FUNCTIONS</h2>";
+            $string = " basic functiOn ";
+            echo "Original String: '$string'<br>";
+            echo "Uppercase: " . strtoupper($string) . "<br>";
+            echo "Lowercase: " . strtolower($string) . "<br>";
+            echo "Ucfirst: " . ucfirst($string) . "<br>";
+            echo "Reversed: " . strrev($string) . "<br>";
+            echo "Trimmed (Right): '" . rtrim($string) . "'<br>";
+            echo "Trimmed (Left): '" . ltrim($string) . "'<br>";
+            echo "Repeated 3 times: " . str_repeat($string, 3) . "<br>";
+            echo "Replace 'Basic' with 'Elementary': " . str_replace("Basic", "Elementary", "Basic functions") . "<br>";
+            break;
 
-?>
-</form>
-</body>
-</head>
-</html>
- 
-case 3:
-echo "Mark alloted";
-$m1=95.5;
-$m2=96.3;
-$m3=90.65;
-$m4=91.56;
-$m5=85.6;
-$p=-95.4;
-echo floor($m1); echo "<br>";
-echo floor($m2);
-echo "<br>";
-echo floor($m3); echo "<br>";
-echo floor($m4); echo "<br>";
-echo floor($m5);
-echo "<br>"; echo abs($p); echo "<br>"; break;
-default:
-echo "Enter the correct choice";
+        case 2:
+            echo "<h2>DATE FUNCTIONS</h2>";
+            date_default_timezone_set("Asia/Kolkata");
+            echo "Day (d): " . date("d") . "<br>";
+            echo "Month (m): " . date("m") . "<br>";
+            echo "Year (Y): " . date("Y") . "<br>";
+            echo "Current Time (H:i:s): " . date("H:i:s") . "<br>";
+            echo "Full Date & Time: " . date("d-m-Y H:i:s") . "<br>";
+            break;
 
+        case 3:
+            echo "<h2>MATH FUNCTIONS</h2>";
+            $a = 95.5; $b = 96.3; $c = -91.56;
 
-?>
-</form>
-</body>
-</head>
-</html>
- 
-case 3:
-echo "Mark alloted";
-$m1=95.5;
-$m2=96.3;
-$m3=90.65;
-$m4=91.56;
-$m5=85.6;
-$p=-95.4;
-echo floor($m1); echo "<br>";
-echo floor($m2);
-echo "<br>";
-echo floor($m3); echo "<br>";
-echo floor($m4); echo "<br>";
-echo floor($m5);
-echo "<br>"; echo abs($p); echo "<br>"; break;
-default:
-echo "Enter the correct choices";
-break;
+            echo "Number a = $a<br>";
+            echo "Number b = $b<br>";
+            echo "Number c = $c<br><br>";
+
+            echo "Floor(a): " . floor($a) . "<br>";
+            echo "Ceil(b): " . ceil($b) . "<br>";
+            echo "Round(a): " . round($a) . "<br>";
+            echo "Absolute(c): " . abs($c) . "<br>";
+            echo "Square Root of 25: " . sqrt(25) . "<br>";
+            echo "Power (2^5): " . pow(2, 5) . "<br>";
+            echo "Random Number (1-100): " . rand(1, 100) . "<br>";
+            break;
+
+        default:
+            echo "<h3 style='color:red;'>Please enter a valid choice (1, 2, or 3)</h3>";
+    }
 }
-</form>
+?>
 </body>
-</head>
 </html>
- 
-
-
-
-
-
-
